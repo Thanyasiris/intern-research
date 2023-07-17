@@ -16,7 +16,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.4"
+        kotlinCompilerExtensionVersion = "1.3.2"
     }
 }
 ```
@@ -29,8 +29,8 @@ android {
 dependencies {
 
     // BOM
-    implementation(platform("androidx.compose:compose-bom:2023.06.01"))
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.06.01"))
+    implementation(platform("androidx.compose:compose-bom:2022.12.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2022.12.00"))
 
     // Material Design 2
     implementation'androidx.compose.material:material'
@@ -44,7 +44,7 @@ dependencies {
     debugImplementation'androidx.compose.ui:ui-test-manifest'
 
     // Optional - Integration with ViewModels
-    implementation'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1'
+    implementation'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1'
 }
 ```
 
@@ -52,7 +52,9 @@ dependencies {
 
     *   The Compose Bill of Materials (BOM) ซึ่งช่วยในการจัดการเวอร์ชั่นของไลบรารี่ Compose ทั้งหมด
 
-    *   Material Design 2 ธีมของแอปพลิเคชั่น สามารถเลือกได้
+    *   Material Design 2 คือธีมของแอปพลิเคชั่น สามารถเลือกได้
+
+    *   \* ต้องเลือกเวอร์ชั่นให้สัมพันธ์กับ `kotlinCompilerExtensionVersion` และเวอร์ชั่นของ viewmodel เดิมด้วย
 
     *   อื่นๆ สามารถดูเพิ่มเติมได้ใน [https://developer.android.com/jetpack/compose/setup#kotlin](https://developer.android.com/jetpack/compose/setup#kotlin)
 
