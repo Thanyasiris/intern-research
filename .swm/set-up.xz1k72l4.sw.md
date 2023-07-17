@@ -9,7 +9,17 @@ app_version: 1.13.12
 
 ### app’s `build.gradle`
 
-`android {     buildFeatures {         compose = true     }     composeOptions {         kotlinCompilerExtensionVersion = "1.4.8"     } }`
+```gradle
+android {
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.8"
+    }
+}
+```
 
 *   ตั้งค่า `compose = true` เพื่อเปิดใช้ฟังก์ชั่นการทำงานแบบ Compose
 
