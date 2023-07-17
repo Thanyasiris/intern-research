@@ -16,7 +16,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.8"
+        kotlinCompilerExtensionVersion = "1.4.4"
     }
 }
 ```
@@ -28,25 +28,33 @@ android {
 ```gradle
 dependencies {
 
-    val composeBom = platform("androidx.compose:compose-bom:2023.06.01")
-    implementation(composeBom)
-    androidTestImplementation(composeBom)
+    // BOM
+    implementation(platform("androidx.compose:compose-bom:2023.06.01"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.06.01"))
 
     // Material Design 2
-    implementation("androidx.compose.material:material")
+    implementation'androidx.compose.material:material'
 
     // Android Studio Preview support
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    debugImplementation("androidx.compose.ui:ui-tooling")
+    implementation'androidx.compose.ui:ui-tooling-preview'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
 
     // UI Tests
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation'androidx.compose.ui:ui-test-junit4'
+    debugImplementation'androidx.compose.ui:ui-test-manifest'
 
     // Optional - Integration with ViewModels
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1'
 }
 ```
+
+*   ตั้งค่า `dependencies` ได้แก่
+
+    *   The Compose Bill of Materials (BOM) ซึ่งช่วยในการจัดการเวอร์ชั่นของไลบรารี่ Compose ทั้งหมด
+
+    *   Material Design 2 ธีมของแอปพลิเคชั่น สามารถเลือกได้
+
+    *   อื่นๆ สามารถดูเพิ่มเติมได้ใน [https://developer.android.com/jetpack/compose/setup#kotlin](https://developer.android.com/jetpack/compose/setup#kotlin)
 
 <br/>
 
